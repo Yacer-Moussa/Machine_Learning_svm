@@ -1,0 +1,13 @@
+algorithm fit(data_train[1...n], iterations, learning_rate)
+	//initialisiere Gewichtsvektor w mit Nullvektor
+	w = Nullvektor
+	//initialisiere Bias b mit 0
+	b = 0
+
+	for i = 0; i < iterations; i++
+		for sample in data_train
+			if not (sample.label * (w * sample.vector + b)) >= 1
+				//Datenpunkt verletzt Bedingung: Passe w und b an
+				w += sample.vector * (sample.label * learning_rate)
+				b += sample.label * learning_rate
+
