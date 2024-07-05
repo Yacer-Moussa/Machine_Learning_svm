@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GemerkteListe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.screenrate.app.MeineGemerkteListe">
+
+    <ImageView
+        android:id="@+id/menuIconGemerkteListe"
+        android:layout_width="30dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:onClick="onMenuIconClick"
+        android:padding="5dp"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTextGemerkteListe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:text="Meine Gemerkte Liste"
+        android:textSize="25sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@id/menuIconGemerkteListe"
+        app:layout_constraintStart_toEndOf="@id/menuIconGemerkteListe"
+        app:layout_constraintTop_toTopOf="@id/menuIconGemerkteListe"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/titleTextGemerkteListe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/NavMenuGemerkteListe"
+        android:layout_width="282dp"
+        android:layout_height="match_parent"
+        android:background="#E8333333"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="49dp"
+        tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="279dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="3dp"
+                android:background="#DF303030"
+                android:padding="16dp"
+                android:text="Navigation Menu"
+                android:textAlignment="center"
+                android:textColor="#F4F1F1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/moviesButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="54dp"
+                android:layout_height="57dp"
+                android:layout_marginEnd="228dp"
+                android:clickable="true"
+                android:contentDescription="Navigations Menu"
+                android:onClick="onMenuIconClick"
+                android:padding="5dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.017" />
+
+            <Button
+                android:id="@+id/moviesButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuFilmUndSerieClicked"
+                android:padding="16dp"
+                android:text="Filme und Serien"
+                app:layout_constraintBottom_toTopOf="@+id/GemerkteListeButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/GemerkteListeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuGemerkteListeClick"
+                android:padding="16dp"
+                android:text="Meine Gemerkte Liste"
+                app:layout_constraintBottom_toTopOf="@+id/Freundesliste"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviesButton" />
+
+            <Button
+                android:id="@+id/Freundesliste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuFreundeslisteClick"
+                android:padding="16dp"
+                android:text="Freundesliste"
+                app:layout_constraintBottom_toTopOf="@+id/Empfehlungen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GemerkteListeButton" />
+
+            <Button
+                android:id="@+id/Empfehlungen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuEmpfehlungenClick"
+                android:padding="16dp"
+                android:text="Empfehlungen"
+                app:layout_constraintBottom_toTopOf="@+id/Benutzereinstellungen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Freundesliste" />
+
+            <Button
+                android:id="@+id/Benutzereinstellungen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="305dp"
+                android:onClick="onMenuBenutzereinstellungenClick"
+                android:padding="16dp"
+                android:text="Benutzereinstellungen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Empfehlungen" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

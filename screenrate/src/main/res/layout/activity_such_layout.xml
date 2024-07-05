@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Search bar and icons -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/filterScreen"
+        android:layout_below="@id/searchLayout"
+        android:padding="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <!-- Navigation Menu -->
+
+
+    <!-- Filter screen -->
+    <RelativeLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:visibility="visible">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/filterIcon"
+                android:layout_width="41dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="19dp"
+                android:clickable="true"
+                android:onClick="onFilterIconClick"
+                android:padding="8dp"
+                android:src="@drawable/ic_filter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.783"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/menuIcon3"
+                android:layout_width="54dp"
+                android:layout_height="57dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="6dp"
+                android:clickable="true"
+                android:contentDescription="Navigations Menu"
+                android:onClick="onMenuIconClick"
+                android:padding="5dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/searchEditText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/searchEditText"
+                android:layout_width="308dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@null"
+                android:hint="Search"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/filterIcon"
+                app:layout_constraintStart_toEndOf="@+id/menuIcon3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="42dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="263dp"
+                android:clickable="true"
+                android:onClick="onSearchIconClick"
+                android:padding="5dp"
+                android:src="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="@+id/filterIcon"
+                app:layout_constraintStart_toStartOf="@+id/searchEditText"
+                app:layout_constraintTop_toTopOf="@+id/filterIcon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/filterScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchLayout"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/categoriesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Categories"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/category1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action" />
+
+        <CheckBox
+            android:id="@+id/category2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drama" />
+
+        <CheckBox
+            android:id="@+id/category3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thriller" />
+
+        <!-- Streaming Providers -->
+        <TextView
+            android:id="@+id/streamingProvidersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Streaming Providers"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/provider1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Netflix" />
+
+        <CheckBox
+            android:id="@+id/provider2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HBO" />
+
+        <CheckBox
+            android:id="@+id/provider3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disney Plus" />
+
+
+        <TextView
+            android:id="@+id/contentTypeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Content Type"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/seriesCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Series" />
+
+        <CheckBox
+            android:id="@+id/movieCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie" />
+
+
+        <Button
+            android:id="@+id/applyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Apply" />
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/NavMenu"
+        android:layout_width="282dp"
+        android:layout_height="match_parent"
+        android:background="#E8333333"
+        android:visibility="visible"
+        tools:visibility="gone">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="279dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="3dp"
+                android:background="#DF303030"
+                android:padding="16dp"
+                android:text="Navigation Menu"
+                android:textAlignment="center"
+                android:textColor="#F4F1F1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/moviesButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="54dp"
+                android:layout_height="57dp"
+                android:layout_marginEnd="228dp"
+                android:clickable="true"
+                android:contentDescription="Navigations Menu"
+                android:onClick="onMenuIconClick"
+                android:padding="5dp"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.017" />
+
+            <Button
+                android:id="@+id/moviesButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuFilmUndSerieClicked"
+                android:padding="16dp"
+                android:text="Filme und Serien"
+                app:layout_constraintBottom_toTopOf="@+id/GemerkteListeButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/GemerkteListeButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuGemerkteListeClick"
+                android:padding="16dp"
+                android:text="Meine Gemerkte Liste"
+                app:layout_constraintBottom_toTopOf="@+id/Freundesliste"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/moviesButton" />
+
+            <Button
+                android:id="@+id/Freundesliste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuFreundeslisteClick"
+                android:padding="16dp"
+                android:text="Freundesliste"
+                app:layout_constraintBottom_toTopOf="@+id/Empfehlungen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/GemerkteListeButton" />
+
+            <Button
+                android:id="@+id/Empfehlungen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onMenuEmpfehlungenClick"
+                android:padding="16dp"
+                android:text="Empfehlungen"
+                app:layout_constraintBottom_toTopOf="@+id/Benutzereinstellungen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Freundesliste" />
+
+            <Button
+                android:id="@+id/Benutzereinstellungen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="305dp"
+                android:onClick="onMenuBenutzereinstellungenClick"
+                android:padding="16dp"
+                android:text="Benutzereinstellungen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Empfehlungen" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</RelativeLayout>
+

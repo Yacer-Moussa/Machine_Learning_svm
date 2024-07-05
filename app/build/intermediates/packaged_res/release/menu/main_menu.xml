@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:title="Home" />
+        <item
+            android:id="@+id/fl"
+            android:title="Freunde Liste" />
+        <item
+            android:id="@+id/emp"
+            android:title="Empfehlungen" />
+        <item
+            android:id="@+id/be"
+            android:title="Benutzer Einstellung" />
+        <item
+            android:id="@+id/logout"
+            android:title="logout" />
+    </group>
+</menu>

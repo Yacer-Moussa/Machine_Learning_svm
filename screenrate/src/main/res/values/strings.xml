@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ScreenRate</string>
+    <string name="menu_Open">Open</string>
+    <string name="close_menu">Close</string>
+
+    <string-array name="stream_providers">
+        <item>Netflix</item>
+        <item>Amazon Prime Video</item>
+        <item>Disney+</item>
+        <!-- Weitere Stream-Anbieter hinzufügen -->
+    </string-array>
+
+    <string-array name="categories">
+        <item>Action</item>
+        <item>Drama</item>
+        <item>Komödie</item>
+        <!-- Weitere Kategorien hinzufügen -->
+    </string-array>
+</resources>

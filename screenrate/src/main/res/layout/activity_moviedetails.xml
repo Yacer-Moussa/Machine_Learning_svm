@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/moviePoster"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/movieSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moviePoster"
+        android:layout_marginTop="16dp"
+        android:text="Movie Summary: "
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <RatingBar
+        android:id="@+id/movieRatingBar"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movieSummary"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:rating="4.5"
+        android:stepSize="0.1" />
+
+    <TextView
+        android:id="@+id/movieGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movieRatingBar"
+        android:layout_marginTop="34dp"
+        android:text="Categories: Action, Thriller" />
+
+    <ImageView
+        android:id="@+id/shareIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_alignBaseline="@id/movieGenre"
+        android:layout_marginStart="207dp"
+        android:layout_toEndOf="@id/movieGenre"
+        android:src="@drawable/ic_share" />
+
+    <TextView
+        android:id="@+id/reviewsText"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movieGenre"
+        android:layout_marginStart="-402dp"
+        android:layout_marginTop="21dp"
+        android:layout_toEndOf="@id/shareIcon"
+        android:text="Reviews :" />
+
+
+    <ImageView
+        android:id="@+id/penIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/movieGenre"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="21dp"
+        android:layout_toEndOf="@id/reviewsText"
+        android:src="@drawable/ic_pen" />
+
+    <LinearLayout
+        android:id="@+id/reviewsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
