@@ -1,0 +1,3 @@
+Ihre Beschreibung vom Vorgehen für Aufgabe 4
+das Können wir lösen wenn wir unser JS Datei aktualisieren mit diesem Zeile // Wird alle 3 Sekunden aktualisiert
+                                                                            window.setInterval(requestData, 3000);
